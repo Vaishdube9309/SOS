@@ -166,30 +166,26 @@
         </div>
     </div>
   
-
- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    console.log("Location allowed:", position);
-                    document.body.style.display = "block"; // लोकेशन परवानगी दिल्यास पेज दाखवा
+                function(position) {
+                    console.log("Location access granted.");
+                    console.log("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
                 },
-                function (error) {
-                    alert("लोकेशन आवश्यक आहे! कृपया परवानगी द्या.");
-                    location.reload(); // लोकेशन नाकारल्यास पेज रीफ्रेश करा
+                function(error) {
+                    if (error.code === error.PERMISSION_DENIED) {
+                        alert("कृपया लोकेशन परवानगी द्या, ज्यामुळे आपत्कालीन मदतीसाठी स्थान वापरता येईल.");
+                    }
                 }
             );
         } else {
-            alert("तुमच्या ब्राउझरमध्ये लोकेशन सपोर्ट नाही.");
+            alert("तुमचे ब्राऊझर लोकेशन समर्थन करत नाही.");
         }
     });
 </script>
-
-    
-    
+ 
     
 </body>
 </html>
