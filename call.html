@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आपत्कालीन बटण</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .emergency-button {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .emergency-button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <a href="tel:+919156542422" class="emergency-button" >आपत्कालीन कॉल</a>
+    
+    <script>
+        function makeEmergencyCall() {
+            window.location.href = 'tel:+919156542422'; 
+        }
+    </script>
+</body>
+</html>
