@@ -200,21 +200,16 @@
         );
     }
 
-    function openBrowserSettings() {
-        let userAgent = navigator.userAgent;
-        if (userAgent.match(/chrome|chromium|crios/i)) {
-            // Open Chrome settings
-            window.open("chrome://settings/content/location", "_blank");
-        } else if (userAgent.match(/firefox|fxios/i)) {
-            // Open Firefox settings
-            window.open("about:preferences#privacy", "_blank");
-        } else if (userAgent.match(/safari/i)) {
-            // Safari does not support direct settings link
-            alert("Safari ब्राऊझरमध्ये सेटिंग्ज मॅन्युअली बदलाव्या लागतील.");
-        } else {
-            alert("कृपया तुमच्या ब्राऊझरच्या सेटिंग्समध्ये जाऊन लोकेशन परवानगी द्या.");
-        }
+   function openBrowserSettings() {
+    let userAgent = navigator.userAgent;
+    if (userAgent.match(/chrome|chromium|crios/i)) {
+        window.open("chrome://settings/content/location", "_blank"); // Chrome location settings
+    } else if (userAgent.match(/firefox|fxios/i)) {
+        window.open("about:preferences#privacy", "_blank"); // Firefox location settings
+    } else {
+        alert("कृपया तुमच्या ब्राऊझरच्या सेटिंग्समध्ये जाऊन लोकेशन परवानगी द्या.");
     }
+}
 </script>
 
 
